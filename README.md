@@ -6,6 +6,13 @@
 
 Awesome Arch Linux cheat sheet, that I will mostly update from time to time, whenever I find something, that I need to remember, but find it hard to. 
 
+### Font
+Pan-CJK 
+https://www.archlinux.org/packages/community/any/adobe-source-han-sans-otc-fonts/
+~~~
+sudo pacman -S adobe-source-han-sans-otc-fonts 
+~~~
+
 ### AUR
 https://wiki.archlinux.org/index.php/Arch_User_Repository
 ~~~
@@ -17,6 +24,7 @@ Server = http://repo.archlinux.fr/$arch
 
 ### Pacman
 Package signing
+
 https://wiki.archlinux.org/index.php/Pacman/Package_signing
 
 ### Commands
