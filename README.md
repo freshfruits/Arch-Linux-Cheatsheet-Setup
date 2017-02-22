@@ -44,6 +44,15 @@ EF00 = boot
 ### GIT
 https://github.com/freshfruits/Git-Cheat-Sheet
 
+### UFW - Uncomplicated Firewall
+```
+sudo systemctl	start ufw
+sudo systemctl	enable ufw
+sudo ufw deafult allow outgoing
+sudo ufw deafult deny incoming
+sudo ufw enable
+```
+
 ### Font
 https://www.archlinux.org/packages/community/any/adobe-source-han-sans-otc-fonts/
 
