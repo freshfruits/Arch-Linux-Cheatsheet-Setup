@@ -10,7 +10,34 @@ I am also partly writing my own arch linux install script, to help myself learn 
 
 ## Pre-installation
 ## Installation
-## Do-This
+
+### Internet
+One of the most important ones! Remember to check the internet connection. Dhcpcd daemon already started for wired devices.
+
+```
+# ping archlinux.org
+``` 
+#### Wireless
+Arch linux should by default have found the network card. Check by writting **ip addr**.
+
+To connect to the wireless access point, use the following command.
+```
+# wifi-menu (interface name for wireless network card)
+```
+### Keyboard
+```
+# loadkeys (keymap)
+```
+### Partition
+```
+# lsblk
+```
+#### Format Partitions
+EF00 = boot
+8200 = swap
+8300 = filesystem / root/home
+
+## Good-Stuff
 
 ### Font
 Pan-CJK 
