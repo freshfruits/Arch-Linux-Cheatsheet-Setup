@@ -45,13 +45,50 @@ EF00 = boot
 https://github.com/freshfruits/Git-Cheat-Sheet
 
 ### UFW - Uncomplicated Firewall
+https://wiki.archlinux.org/index.php/Uncomplicated_Firewall
 ```
-sudo systemctl	start ufw
-sudo systemctl	enable ufw
-sudo ufw deafult allow outgoing
-sudo ufw deafult deny incoming
-sudo ufw enable
+# sudo systemctl	start ufw
+# sudo systemctl	enable ufw
+# sudo ufw deafult allow outgoing
+# sudo ufw deafult deny incoming
+# sudo ufw enable
 ```
+
+### Firefox
+```
+# sudo pacman -S firefox
+```
+
+#### Addons
+https://addons.mozilla.org/en-US/firefox/addon/umatrix/ <br>
+https://addons.mozilla.org/en-US/firefox/addon/ublock-origin/ <br> 
+https://addons.mozilla.org/en-US/firefox/addon/self-destructing-cookies/ <br>
+https://www.eff.org/https-everywhere/ <br>
+https://addons.mozilla.org/en-US/firefox/addon/decentraleyes/ <br>
+
+Maybe I should make a script for this?
+```
+about:config
+
+privacy.trackingprotection.enabled = true
+geo.enabled = false
+browser.safebrowsing.phishing.enabled = false
+browser.safebrowsing.malware.enabled = false
+dom.event.clipboardevents.enabled = false
+network.cookie.cookieBehavior = 1
+network.cookie.lifetimePolicy = 2
+browser.cache.offline.enable = false
+browser.send_pings = false
+webgl.disabled = true
+dom.battery.enabled = false
+browser.sessionstore.max_tabs_undo = 0
+```
+### Chat
+http://www.pidgin.im/
+
+#### XMPP
+https://xmpp.is/  <br>
+@dukgo.com hosted on NSA run server-farm. 
 
 ### Font
 https://www.archlinux.org/packages/community/any/adobe-source-han-sans-otc-fonts/
