@@ -83,6 +83,12 @@ webgl.disabled = true
 dom.battery.enabled = false
 browser.sessionstore.max_tabs_undo = 0
 ```
+### Search Engines
+https://searx.me/ - Shit results, but said to be privacy/anon. <br>
+Insances : https://github.com/asciimoo/searx/wiki/Searx-instances
+
+https://www.startpage.com/ - Google results.. But..
+
 ### Chat
 http://www.pidgin.im/
 
