@@ -96,6 +96,10 @@ http://www.pidgin.im/
 https://xmpp.is/  <br>
 @dukgo.com hosted on NSA run server-farm. 
 
+### VPN
+https://cryptostorm.is/ - Iceland based
+https://mullvad.net/- Sweden based
+
 ### Font
 https://www.archlinux.org/packages/community/any/adobe-source-han-sans-otc-fonts/
 
