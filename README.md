@@ -101,7 +101,7 @@ https://xmpp.is/  <br>
 @dukgo.com hosted on NSA run server-farm. 
 
 ### VPN
-https://cryptostorm.is/ - Iceland based
+https://cryptostorm.is/ - Iceland based <br>
 https://mullvad.net/- Sweden based
 
 ### Font
