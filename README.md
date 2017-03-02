@@ -56,7 +56,7 @@ https://wiki.archlinux.org/index.php/Uncomplicated_Firewall
 
 ### MP3/OGG
 ```
-for f in ./*.mp3; do ffmpeg -i "$f" -vn -codec:a libvorbis -qscale:a 6 "${f/%mp3/ogg}"; done
+# for f in ./*.mp3; do ffmpeg -i "$f" -vn -codec:a libvorbis -qscale:a 6 "${f/%mp3/ogg}"; done
 ```
 ### Firefox
 ```
