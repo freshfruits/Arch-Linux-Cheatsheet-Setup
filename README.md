@@ -33,11 +33,18 @@ To connect to the wireless access point, use the following command.
 # wifi-menu (interface name for wireless network card)
 ```
 
+### 
+
 ### Format Partitions
 ```
 EF00 = boot
 8200 = swap
 8300 = filesystem / root/home
+```
+
+#### Size of Partitions
+```
+boot partition = 100MiB (There is a lot of shit in Boot, so only 100MB) 
 ```
 
 ### bootloader 
