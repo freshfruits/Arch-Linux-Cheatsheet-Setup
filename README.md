@@ -54,7 +54,7 @@ boot partition = 100MiB (There is a lot of shit in Boot, so only 100MB)
 # vim/nano /boot/loader/entries/arch.conf
 ```
 
-#### file
+#### arch.conf
 ```
 title Arch Linux
 linux /vmlinuz-linux
