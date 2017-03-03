@@ -39,6 +39,22 @@ EF00 = boot
 8200 = swap
 8300 = filesystem / root/home
 ```
+
+### bootloader 
+```
+# bootctl install
+(LONG ID) # blkid -s PARTUUID -o value /dev/sdxY > /boot/loader/entries/arch.conf
+# vim/nano /boot/loader/entries/arch.conf
+```
+
+#### file
+```
+title Arch Linux
+linux /vmlinuz-linux
+initrd /initramfs-linux.img
+options root=PARTUUID=LONGID rw
+```
+
 ## Good-Stuff
 
 ### GIT
