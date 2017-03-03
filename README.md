@@ -54,7 +54,7 @@ https://wiki.archlinux.org/index.php/Uncomplicated_Firewall
 # sudo ufw enable
 ```
 
-### MP3/OGG
+### MP3/OGG - Converting MP3 to OGG
 ```
 # for f in ./*.mp3; do ffmpeg -i "$f" -vn -codec:a libvorbis -qscale:a 6 "${f/%mp3/ogg}"; done
 ```
@@ -69,6 +69,7 @@ https://addons.mozilla.org/en-US/firefox/addon/ublock-origin/ <br>
 https://addons.mozilla.org/en-US/firefox/addon/self-destructing-cookies/ <br>
 https://www.eff.org/https-everywhere/ <br>
 https://addons.mozilla.org/en-US/firefox/addon/decentraleyes/ <br>
+https://github.com/dillbyrne/random-agent-spoofer <br>
 
 Maybe I should make a script for this?
 ```
