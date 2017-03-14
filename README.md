@@ -86,6 +86,9 @@ https://wiki.archlinux.org/index.php/Uncomplicated_Firewall
 # sudo pacman -S firefox
 ```
 
+#### Firefox Hardning
+https://github.com/pyllyukko/user.js/
+
 #### Addons
 https://addons.mozilla.org/en-US/firefox/addon/umatrix/ <br>
 https://addons.mozilla.org/en-US/firefox/addon/ublock-origin/ <br> 
