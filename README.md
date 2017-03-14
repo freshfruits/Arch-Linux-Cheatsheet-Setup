@@ -82,7 +82,7 @@ https://wiki.archlinux.org/index.php/Uncomplicated_Firewall
 # sudo pacman -S firefox
 ```
 
-#### Firefox Hardning
+#### Firefox Hardening
 https://github.com/pyllyukko/user.js/
 
 #### Addons
