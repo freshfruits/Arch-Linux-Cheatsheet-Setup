@@ -97,23 +97,6 @@ https://www.eff.org/https-everywhere/ <br>
 https://addons.mozilla.org/en-US/firefox/addon/decentraleyes/ <br>
 https://github.com/dillbyrne/random-agent-spoofer <br>
 
-Maybe I should make a script for this?
-```
-about:config
-
-privacy.trackingprotection.enabled = true
-geo.enabled = false
-browser.safebrowsing.phishing.enabled = false
-browser.safebrowsing.malware.enabled = false
-dom.event.clipboardevents.enabled = false
-network.cookie.cookieBehavior = 1
-network.cookie.lifetimePolicy = 2
-browser.cache.offline.enable = false
-browser.send_pings = false
-webgl.disabled = true
-dom.battery.enabled = false
-browser.sessionstore.max_tabs_undo = 0
-```
 ### Search Engines
 https://searx.me/ - Shit results, but said to be privacy/anon. <br>
 Insances : https://github.com/asciimoo/searx/wiki/Searx-instances
