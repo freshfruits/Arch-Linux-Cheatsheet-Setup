@@ -1,11 +1,11 @@
-# Arch-Linux-Cheat-Sheet
+# Arch-Linux-Cheatsheet-Setup
 
-<h1 align="center">
-	<img src="https://www.archlinux.org/static/logos/archlinux-logo-dark-90dpi.ebdee92a15b3.png" alt="arch">
-</h1>
+Original Author: [Jacob](https://github.com/freshfruits)
 
-Basically, this is my Arch Linux cheat sheet (Arch Linux setup), that I will mostly update from time to time, whenever I find something, that I need to remember, but will forget at some point. 
+### Introduction
+**Note: This cheatsheet is directed towards myself.**
 
+> Basically, this is my Arch Linux cheat sheet (Arch Linux setup), that I will mostly update from time to time, whenever I find something, that I need to remember, but will forget at some point. 
 I am also partly writing on a arch linux install script, to help myself learn bash, and other pretty cool features, that I had no knowledge of. 
 
 ## Install guide
@@ -134,3 +134,5 @@ https://www.archlinux.org/packages/community/any/adobe-source-han-sans-otc-fonts
 # pacman -Qo /path     # find the package which installed the file at /pat
 ```
 
+### References
+Keep your eyes open, and you will find information beyond your own knowledge. 
