@@ -61,60 +61,6 @@ linux /vmlinuz-linux
 initrd /initramfs-linux.img
 options root=PARTUUID=LONGID rw
 ```
-
-## Good-Stuff
-
-### GIT
-https://github.com/freshfruits/Git-Cheat-Sheet
-
-### UFW - Uncomplicated Firewall
-https://wiki.archlinux.org/index.php/Uncomplicated_Firewall
-```
-# sudo systemctl	start ufw
-# sudo systemctl	enable ufw
-# sudo ufw deafult allow outgoing
-# sudo ufw deafult deny incoming
-# sudo ufw enable
-```
-
-### Firefox
-```
-# sudo pacman -S firefox
-```
-
-#### Firefox Hardening
-https://github.com/pyllyukko/user.js/
-
-#### Addons
-https://addons.mozilla.org/en-US/firefox/addon/umatrix/ <br>
-https://addons.mozilla.org/en-US/firefox/addon/ublock-origin/ <br> 
-https://addons.mozilla.org/en-US/firefox/addon/self-destructing-cookies/ <br>
-https://www.eff.org/https-everywhere/ <br>
-https://addons.mozilla.org/en-US/firefox/addon/decentraleyes/ <br>
-https://github.com/dillbyrne/random-agent-spoofer <br>
-
-### Search Engines
-https://searx.me/ - Shit results, but said to be privacy/anon. <br>
-Insances : https://github.com/asciimoo/searx/wiki/Searx-instances
-
-https://www.startpage.com/ - Google results.. But..
-
-### Chat
-http://www.pidgin.im/
-
-#### XMPP
-https://xmpp.is/  <br>
-@dukgo.com hosted on NSA run server-farm. 
-
-### VPN
-https://cryptostorm.is/ - Iceland based <br>
-https://mullvad.net/- Sweden based
-
-### Font
-https://www.archlinux.org/packages/community/any/adobe-source-han-sans-otc-fonts/
-
-`# sudo pacman -S adobe-source-han-sans-otc-fonts `
-
 ### Pacman-Commands
 
 ```
