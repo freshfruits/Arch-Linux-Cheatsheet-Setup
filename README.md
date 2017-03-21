@@ -109,13 +109,79 @@ Rank the mirrors
 # genfstab -U /mnt >> /mnt/etc/fstab
 ```
 
+### Chroot
+Enter chroot
+```
+# arch-chroot /mnt
+```
+
+### TimeZone
+Set ur timezone
+```
+# ln -sf /usr/share/zoneinfo/Region/City /etc/localtime
+```
+
+Set hardware clock
+```
+# hwclock --systohc
+```
+
+### Locale
+Uncommet the language you want.
+```
+# nano /etc/locale.gen
+```
+
+To generate the locale
+```
+# locale-gen
+```
+
+```
+# echo LANG=en_DK.UTF-8 > /etc/locale.conf
+# export LANG=en_DK.UTF-8
+```
+
+### Hostname
+Choose whatever to your like 
+```
+# echo xxx > /etc/hostname
+```
+
+### AUR
+```
+# nano /etc/pacman.conf
+```
+
+Uncomment these two lines
+```
+[multilib]
+Include = /etc/pacman.d/mirrorlist
+```
+
+Add these lines at the bottom of the file. So you can install the AUR packages.
+```
+[archlinuxfr]
+SigLevel = Never
+Server = http://repo.archlinux.fr/$arch
+```
+
+optional is to update with 
+```
+# pacman -Syu
+```
+
+### Root password
+```
+# passwd
+```
+
 ### bootloader 
 ```
 # bootctl install
 (LONG ID) # blkid -s PARTUUID -o value /dev/sdxY > /boot/loader/entries/arch.conf
 # vim/nano /boot/loader/entries/arch.conf
 ```
-
 #### arch.conf
 ```
 title Arch Linux
@@ -123,6 +189,17 @@ linux /vmlinuz-linux
 initrd /initramfs-linux.img
 options root=PARTUUID=LONGID rw
 ```
+
+### Reboot
+```
+# exit
+# umount -R /mnt
+# reboot
+```
+
+### Post-Install
+All that is left to do, is to install the xorg or wayland, and a desktop manager. 
+
 ### Pacman-Commands
 
 ```
@@ -145,4 +222,6 @@ options root=PARTUUID=LONGID rw
 ### References
 Keep your eyes open, and you will find information beyond your own knowledge. 
 
+https://wiki.archlinux.org/index.php/installation_guide
+https://wiki.archlinux.org/index.php/Arch_User_Repository
 https://wiki.archlinux.org/index.php/mirrors
