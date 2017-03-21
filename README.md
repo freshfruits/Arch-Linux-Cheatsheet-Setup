@@ -33,8 +33,6 @@ To connect to the wireless access point, use the following command.
 # wifi-menu (interface name for wireless network card)
 ```
 
-### 
-
 ### Format Partitions
 ```
 EF00 = boot
@@ -45,6 +43,70 @@ EF00 = boot
 #### Size of Partitions
 ```
 boot partition = 100MiB (There is a lot of shit in Boot, so only 100MB) 
+```
+
+```
+swap partition = 6GiB/8GiB/12GiB/24GiB (x = ram, equation : 1.5*x. Though you don't really need more than 6GiB)  
+```
+
+```
+root partition = 10GiB/20GiB (There is not really need for more, completely depends on what you wish to achieve) 
+```
+
+```
+home partition = rest of GiB data.   
+```
+
+### filesystem
+Y == partition number
+
+```
+# mkfs.fat 	-F32 	/dev/sdaY
+# mkswap 	/dev/sdaY
+# swapon 	/dev/sdaY
+# mkfs.ext4 	/dev/sdaY
+# mkfs.ext4 	/dev/sdaY
+```
+
+### Mounting
+Y == partition number
+```
+# mount /dev/sdaY /mnt
+# mkdir /mnt/boot
+# mkdir /mnt/home
+# mount /dev/sdaY /mnt/boot
+# mount /dev/sdaY /mnt/home
+```
+
+### Mirrors
+For help. 
+```
+rankmirrors -h
+```
+
+Backup the current mirrorlist 
+```
+# cp /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.backup
+```
+
+Run the following sed line to uncomment every mirror
+```
+# sed -i 's/^#Server/Server/' /etc/pacman.d/mirrorlist.backup
+```
+
+Rank the mirrors
+```
+# rankmirrors -n 6 /etc/pacman.d/mirrorlist.backup > /etc/pacman.d/mirrorlist
+```
+
+### Base
+```
+# pacstrap -i /mnt base base-devel
+```
+
+### Fstab
+```
+# genfstab -U /mnt >> /mnt/etc/fstab
 ```
 
 ### bootloader 
@@ -82,3 +144,5 @@ options root=PARTUUID=LONGID rw
 
 ### References
 Keep your eyes open, and you will find information beyond your own knowledge. 
+
+https://wiki.archlinux.org/index.php/mirrors
