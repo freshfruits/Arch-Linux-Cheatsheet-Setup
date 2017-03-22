@@ -222,6 +222,9 @@ All that is left to do, is to install the xorg or wayland, and a desktop manager
 ### References
 Keep your eyes open, and you will find information beyond your own knowledge. 
 
+Simon <br>
+Kristian
+
 https://wiki.archlinux.org/index.php/installation_guide <br>
 https://wiki.archlinux.org/index.php/Arch_User_Repository <br>
 https://wiki.archlinux.org/index.php/mirrors
