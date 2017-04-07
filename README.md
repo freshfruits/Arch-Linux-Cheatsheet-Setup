@@ -127,7 +127,7 @@ Set hardware clock
 ```
 
 ### Locale
-Uncommet the language you want.
+Uncomment the language you want.
 ```
 # nano /etc/locale.gen
 ```
