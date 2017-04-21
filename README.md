@@ -199,7 +199,12 @@ options root=PARTUUID=LONGID rw
 ```
 
 ### Post-Install
-All that is left to do, is to install the xorg (or wayland), and a desktop manager. 
+All that is left to do, is to install xorg (or wayland), and a window- or desktop manager 
+
+I use xorg as it seems that wayland is still rather unstable.
+```
+# xorg-server xorg-server-utils 
+```
 
 ### Pacman-Commands
 
