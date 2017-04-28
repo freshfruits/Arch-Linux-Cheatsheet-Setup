@@ -3,7 +3,7 @@
 Original Author: [Jacob](https://github.com/freshfruits)
 
 ### Introduction
-**Note: This cheatsheet is directed towards myself.**
+**Note: This cheatsheet is directed towards myself. (UEFI)**
 
 > Basically, this is my Arch Linux cheat sheet (Arch Linux setup), that I will mostly update from time to time, whenever I find something, that I need to remember, but will forget at some point. 
 I am also partly writing on a arch linux install script, to help myself learn bash, and other pretty cool features, that I had no knowledge of. 
