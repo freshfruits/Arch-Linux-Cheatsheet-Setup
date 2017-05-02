@@ -144,7 +144,7 @@ To generate the locale
 ```
 
 ### Hostname
-Choose whatever to your like 
+Choose whatever thats fits. 
 ```
 # echo xxx > /etc/hostname
 ```
@@ -167,7 +167,7 @@ SigLevel = Never
 Server = http://repo.archlinux.fr/$arch
 ```
 
-optional is to update with 
+Next step would be optional. Update with. 
 ```
 # pacman -Syu
 ```
@@ -203,27 +203,25 @@ All that is left to do, is to install xorg (or wayland), and a window- or deskto
 
 I use xorg as it seems that wayland is still rather unstable.
 ```
-# xorg-server xorg-server-utils 
+# sudo pacman -S xorg-server xorg-server-utils 
+```
+### i3wm
+Personally I use i3wm, but a lot of people use i3gaps (eye candy). i3lock, is your lock screen. 
+```
+# sudo pacman -S i3 i3lock
 ```
 
-### Pacman-Commands
-
+Setting up i3wm/i3gaps. 
 ```
-# pacman -Syy      	  # force synchronization of repository databases
-# pacman -Syu		 # 
-
-# pacman -Ss xyz   	# search repository database for packages for xyz
-# pacman -S xyz    	 # install package xyz
-
-# pacman -Sy xyz   	# synchronize repo and install xyz
-# pacman -Syy xyz        # really synchronize repo and install xyz
-
-# pacman -R xyz    	 # remove package xyz but keep its dependencies installed
-# pacman -Rs xyz   	# remove package xyz and all its dependencies (if they are not required by any other package)
-# pacman -Rsc xyz        # remove package xyz, all its dependencies and packages that depend on the target package
-# pacman -Ql xyz   	# show all files installed by the package xyz
-# pacman -Qo /path     # find the package which installed the file at /pat
+# echo "exec i3" >> $HOME/.xinitrc
 ```
+Reboot, Login, write. 
+```
+# startx
+```
+
+I hope you enjoy Arch-Linux. 
+Best wishes. 
 
 ### References
 Keep your eyes open, and you will find information beyond your own knowledge. 
