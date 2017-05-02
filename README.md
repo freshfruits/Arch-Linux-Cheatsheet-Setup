@@ -220,7 +220,7 @@ Reboot, Login, write.
 # startx
 ```
 
-I hope you enjoy Arch-Linux. 
+I hope you enjoy Arch-Linux. <br>
 Best wishes. 
 
 ### References
