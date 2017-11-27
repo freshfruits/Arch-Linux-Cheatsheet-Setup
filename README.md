@@ -59,6 +59,20 @@ home partition = rest of GiB data.
 ```
 
 ### filesystem
+sda1 = boot
+sda2 = swap
+sda3 = root
+sda4 = home
+
+Example
+```
+# mkfs.fat -F32 /dev/sda1
+# mkswap /dev/sda2 
+# swapon /dev/sda2 
+# mkfs.ext4 /dev/sda3
+# mkfs.ext4 /dev/sda4
+```
+
 Y == partition number
 
 ```
@@ -70,6 +84,20 @@ Y == partition number
 ```
 
 ### Mounting
+sda1 = boot
+sda2 = swap
+sda3 = root
+sda4 = home
+
+Example
+```
+# mount /dev/sda3
+# mkdir /mnt/boot
+# mkdir /mnt/home
+# mount /dev/sda1 / mnt/boot
+# mount /dev/sda4 /mnt/home
+```
+
 Y == partition number
 ```
 # mount /dev/sdaY /mnt
