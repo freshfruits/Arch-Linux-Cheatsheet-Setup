@@ -12,26 +12,26 @@ I am also partly writing on a arch linux install script, to help myself learn ba
 ## Install guide
 ```
 key: alt+ctrl+f2
-# less install.txt
+$ less install.txt
 ```
 
 ###  Verify boot
 ```
-# ls /sys/firmware/efi/efivars
+$ ls /sys/firmware/efi/efivars
 ```
 
 ###  Internet
 One of the most important ones! Remember to check the internet connection. Dhcpcd daemon already started for wired devices.
 
 ```
-# ping archlinux.org
+$ ping archlinux.org
 ``` 
 ### Wireless
 Arch linux should by default have found the network card. Check by writting **ip addr**.
 
 To connect to the wireless access point, use the following command.
 ```
-# wifi-menu (interface name for wireless network card)
+$ wifi-menu (interface name for wireless network card)
 ```
 
 ### Format Partitions
@@ -66,11 +66,11 @@ sda4 = home
 
 Example
 ```
-# mkfs.fat -F32 /dev/sda1
-# mkswap /dev/sda2 
-# swapon /dev/sda2 
-# mkfs.ext4 /dev/sda3
-# mkfs.ext4 /dev/sda4
+$ mkfs.fat -F32 /dev/sda1
+$ mkswap /dev/sda2 
+$ swapon /dev/sda2 
+$ mkfs.ext4 /dev/sda3
+$ mkfs.ext4 /dev/sda4
 ```
 
 Y == partition number
@@ -91,11 +91,11 @@ sda4 = home
 
 Example
 ```
-# mount /dev/sda3
-# mkdir /mnt/boot
-# mkdir /mnt/home
-# mount /dev/sda1 / mnt/boot
-# mount /dev/sda4 /mnt/home
+$ mount /dev/sda3 /mnt
+$ mkdir /mnt/boot
+$ mkdir /mnt/home
+$ mount /dev/sda1 / mnt/boot
+$ mount /dev/sda4 /mnt/home
 ```
 
 Y == partition number
@@ -115,71 +115,71 @@ rankmirrors -h
 
 Backup the current mirrorlist 
 ```
-# cp /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.backup
+$ cp /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.backup
 ```
 
 Run the following sed line to uncomment every mirror
 ```
-# sed -i 's/^#Server/Server/' /etc/pacman.d/mirrorlist.backup
+$ sed -i 's/^#Server/Server/' /etc/pacman.d/mirrorlist.backup
 ```
 
 Rank the mirrors
 ```
-# rankmirrors -n 6 /etc/pacman.d/mirrorlist.backup > /etc/pacman.d/mirrorlist
+$ rankmirrors -n 6 /etc/pacman.d/mirrorlist.backup > /etc/pacman.d/mirrorlist
 ```
 
 ### Base
 ```
-# pacstrap -i /mnt base base-devel
+$ pacstrap -i /mnt base base-devel
 ```
 
 ### Fstab
 ```
-# genfstab -U /mnt >> /mnt/etc/fstab
+$ genfstab -U /mnt >> /mnt/etc/fstab
 ```
 
 ### Chroot
 Enter chroot
 ```
-# arch-chroot /mnt
+$ arch-chroot /mnt
 ```
 
 ### TimeZone
 Set ur timezone
 ```
-# ln -sf /usr/share/zoneinfo/Region/City /etc/localtime
+$ ln -s /usr/share/zoneinfo/Region/City > /etc/localtime
 ```
 
 Set hardware clock
 ```
-# hwclock --systohc
+$ hwclock --systohc
 ```
 
 ### Locale
 Uncomment the language you want.
 ```
-# nano /etc/locale.gen
+$ nano /etc/locale.gen
 ```
 
 To generate the locale
 ```
-# locale-gen
+$ locale-gen
 ```
 
 ```
-# echo LANG=en_DK.UTF-8 > /etc/locale.conf
-# export LANG=en_DK.UTF-8
+$ echo LANG=en_DK.UTF-8 > /etc/locale.conf
+$ export LANG=en_DK.UTF-8
 ```
 
 ### Hostname
 Choose whatever thats fits. 
 ```
-# echo xxx > /etc/hostname
+$ echo xxx > /etc/hostname
 ```
 
 ### AUR
 ```
-# nano /etc/pacman.conf
+$ nano /etc/pacman.conf
 ```
 
 Uncomment these two lines
@@ -197,19 +197,19 @@ Server = http://repo.archlinux.fr/$arch
 
 Next step would be optional. Update with. 
 ```
-# pacman -Syu
+$ pacman -Syu
 ```
 
 ### Root password
 ```
-# passwd
+$ passwd
 ```
 
 ### bootloader 
 ```
-# bootctl install
+$ bootctl install
 (LONG ID) # blkid -s PARTUUID -o value /dev/sdxY > /boot/loader/entries/arch.conf
-# vim/nano /boot/loader/entries/arch.conf
+$ vim/nano /boot/loader/entries/arch.conf
 ```
 #### arch.conf
 ```
@@ -219,11 +219,33 @@ initrd /initramfs-linux.img
 options root=PARTUUID=LONGID rw
 ```
 
+### User
+Make a user
+
+```
+$ useradd -m -g users -G wheel,storage,power -s /bin/bash (name)
+```
+
+Create a password for the user
+```
+$ passwd (name)
+```
+
+Create a password for the user
+```
+$ passwd (name)
+```
+
+Find %Wheel All=(ALL) ALL .. uncomment the line (Optional : add the following line under it (To do a sudo command, you have to know the root password). )
+```
+# Defaults rootpw
+```
+
 ### Reboot
 ```
-# exit
-# umount -R /mnt
-# reboot
+$ exit
+$ umount -R /mnt
+$ reboot
 ```
 
 ### Post-Install
@@ -231,28 +253,27 @@ All that is left to do, is to install xorg (or wayland), and a window- or deskto
 
 I use xorg as it seems that wayland is still rather unstable.
 ```
-# sudo pacman -S xorg-server xorg-server-utils 
+$ sudo pacman -S xorg-server xorg-xinit 
 ```
 ### i3wm
-Personally I use i3wm, but a lot of people use i3gaps (eye candy). i3lock, is your lock screen. 
+Personally I use i3gaps (eye candy). i3lock (Note: Its not secure anymore), is your lock screen. 
 ```
-# sudo pacman -S i3 i3lock
+$ sudo pacman -S i3 i3lock
 ```
 
 Setting up i3wm/i3gaps. 
 ```
-# echo "exec i3" >> $HOME/.xinitrc
+$ echo "exec i3" >> $HOME/.xinitrc
 ```
 Reboot, Login, write. 
 ```
-# startx
+$ startx
 ```
 
 I hope you enjoy Arch-Linux. <br>
 Best wishes. 
 
 ### References
-Keep your eyes open, and you will find information beyond your own knowledge. 
 
 Simon <br>
 Kristian
