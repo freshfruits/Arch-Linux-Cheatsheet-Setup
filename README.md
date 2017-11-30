@@ -59,10 +59,12 @@ home partition = rest of GiB data.
 ```
 
 ### filesystem
+```
 sda1 = boot
 sda2 = swap
 sda3 = root
 sda4 = home
+```
 
 Example
 ```
