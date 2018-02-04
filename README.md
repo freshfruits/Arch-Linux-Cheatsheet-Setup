@@ -233,11 +233,6 @@ Create a password for the user
 $ passwd (name)
 ```
 
-Create a password for the user
-```
-$ passwd (name)
-```
-
 Find %Wheel All=(ALL) ALL .. uncomment the line (Optional : add the following line under it (To do a sudo command, you have to know the root password). )
 ```
 # Defaults rootpw
